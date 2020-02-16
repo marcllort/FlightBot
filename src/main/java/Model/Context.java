@@ -1,8 +1,12 @@
 package Model;
 
+import static Model.BotResponse.SALUTE;
+import static Model.BotResponse.TRAVEL;
+
 public enum Context {
 
-    WELCOME(null, null, null, new WordList("sda", "asd"));
+    WELCOME(null, null, SALUTE, new WordList("hey", "asd")),
+    TRAVELTO(null, null, TRAVEL, new WordList("travel"));
 
     private WordList wordList;
     private BotResponse botResponse;
