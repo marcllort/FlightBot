@@ -28,8 +28,8 @@ public enum Context {
         return wordList;
     }
 
-    public String getBotResponse() {
-        return botResponse.getResponse();
+    public ResponseData getBotResponse() {
+        return botResponse.getResponse(this.botResponse);
     }
 
     public Context getNextContext() {

@@ -14,6 +14,7 @@ public class Suggestions {
 
     public Suggestions() {
         countries = new ArrayList<String>();
+        cities = new ArrayList<String>();
     }
 
     public Suggestions(String name, String continent, ArrayList<String> countries, ArrayList<String> cities, String maxPrice, String month) {

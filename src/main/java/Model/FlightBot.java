@@ -15,9 +15,9 @@ public class FlightBot {
         suggestions = new Suggestions();
     }
 
-    public boolean saveSuggestions(String question){
+    public boolean saveSuggestions(String question) {
         CountryCode cc = (CountryCode) CountryCode.findByName(question);
-        if (cc != null){
+        if (cc != null) {
             suggestions.getCountries().add(cc.getName());
             return true;
         }// cal guardar les altres tipus de suggerencies
@@ -31,13 +31,21 @@ public class FlightBot {
         for (String word : splitted) {
             Context actual = context.wordExists(word);//tractarem el string per fer la similaritat, amb una altra lliberia
             if (actual != null) {
-                if (actual.getNextContext()==null){ //ultima, BYE
+                if (actual.getNextContext() == null) { //ultima, BYE
                     System.out.println("stoppìng...");
                 }
-                return actual.getBotResponse();
+
+                ResponseData data = actual.getBotResponse();
+
+                if (!data.getCity().isEmpty()) {
+                    suggestions.getCities().add(data.getCity());
+                    suggestions.getCountries().add(data.getCountry());
+                }
+
+                return data.getResponse();
             }
         }
 
-        return BotResponse.UNKNOWN.getResponse();
+        return BotResponse.UNKNOWN.getResponse(BotResponse.UNKNOWN).getResponse();
     }
 }
