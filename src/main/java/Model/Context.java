@@ -41,7 +41,6 @@ public enum Context {
     }
 
     public Context wordExists(String word) {
-
         for (Context con : Context.values()) {
             if (con.isWordInList(word)) {
                 return con;
@@ -49,7 +48,6 @@ public enum Context {
         }
 
         return null;
-
     }
 
 }

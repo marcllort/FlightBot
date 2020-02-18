@@ -12,8 +12,9 @@ public final class WordList {
     }
 
     public boolean contains(String s) {
-        if (s == null || s.length() < 2)
+        if (s == null || s.length() < 2){
             return false;
+        }
         return Arrays.binarySearch(store, s) >= 0;
     }
 

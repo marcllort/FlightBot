@@ -1,6 +1,5 @@
 package Model;
 
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 
 public class Suggestions {
@@ -73,6 +72,5 @@ public class Suggestions {
     public void setMonth(String month) {
         this.month = month;
     }
-
 
 }

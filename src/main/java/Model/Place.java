@@ -64,4 +64,5 @@ public class Place
     public void setCountryName(String countryName) {
         this.countryName = countryName;
     }
+
 }

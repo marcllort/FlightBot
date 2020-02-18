@@ -32,7 +32,7 @@ public class FlightBot {
             Context actual = context.wordExists(word);//tractarem el string per fer la similaritat, amb una altra lliberia
             if (actual != null) {
                 if (actual.getNextContext() == null) { //ultima, BYE
-                    System.out.println("stoppìng...");
+                    System.out.println("stopping...");
                 }
 
                 ResponseData data = actual.getBotResponse();
