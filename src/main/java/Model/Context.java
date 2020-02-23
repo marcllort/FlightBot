@@ -1,12 +1,12 @@
 package Model;
 
-import static Model.BotResponse.SALUTE;
-import static Model.BotResponse.TRAVEL;
+import static Model.BotResponse.*;
 
 public enum Context {
 
-    WELCOME(null, null, SALUTE, new WordList("hey", "asd")),
-    TRAVELTO(null, null, TRAVEL, new WordList("travel"));
+    WELCOME(null, null, SALUTE, new WordList("hey", "hello")),
+    TRAVELTO(null, null, TRAVEL, new WordList("travel")),
+    GOODBYE(null, null, BYE, new WordList("bye", "goodbye"));
 
     private WordList wordList;
     private BotResponse botResponse;
@@ -30,6 +30,10 @@ public enum Context {
 
     public ResponseData getBotResponse() {
         return botResponse.getResponse(this.botResponse);
+    }
+
+    public BotResponse getBotResp() {
+        return botResponse;
     }
 
     public Context getNextContext() {

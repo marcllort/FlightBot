@@ -3,8 +3,8 @@ package Model;
 public class ResponseData {
 
     private String response;
-    private String city;
-    private String country;
+    private String city = "";
+    private String country = "";
 
     public ResponseData() {
     }
@@ -38,4 +38,5 @@ public class ResponseData {
     public void setCountry(String country) {
         this.country = country;
     }
+
 }

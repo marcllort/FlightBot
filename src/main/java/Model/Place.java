@@ -2,8 +2,7 @@ package Model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Place
-{
+public class Place {
     @SerializedName("PlaceId")
     private String placeId;
     @SerializedName("PlaceName")

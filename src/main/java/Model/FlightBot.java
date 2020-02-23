@@ -8,7 +8,6 @@ public class FlightBot {
     private WordList wordList;
     private Suggestions suggestions;
 
-
     public FlightBot() {
         context = Context.WELCOME;
         wordList = new WordList();
@@ -31,12 +30,11 @@ public class FlightBot {
         for (String word : splitted) {
             Context actual = context.wordExists(word);//tractarem el string per fer la similaritat, amb una altra lliberia
             if (actual != null) {
-                if (actual.getNextContext() == null) { //ultima, BYE
-                    System.out.println("stopping...");
-                }
-
                 ResponseData data = actual.getBotResponse();
 
+                if (actual.getBotResp().equals(BotResponse.BYE)) { //ultima, BYE
+                    return "!" + data.getResponse();
+                }
                 if (!data.getCity().isEmpty()) {
                     suggestions.getCities().add(data.getCity());
                     suggestions.getCountries().add(data.getCountry());
